@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles personnalisés */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 transition;
+  }
+
+  .form-input {
+    @apply w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:ring-opacity-50 focus:outline-none;
+  }
+}
+
+/* Mode sombre */
+.dark {
+  color-scheme: dark;
+}
+
+/* Animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
