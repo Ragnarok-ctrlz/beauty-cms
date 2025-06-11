@@ -5,8 +5,7 @@ import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 export default [
   {
     name: 'app/files-to-lint',
-    files: ['**/*.{js,mjs,jsx,vue}'],
-    ignores: ['src/server/**/*'] // Ignorer le dossier server
+    files: ['**/*.{js,mjs,jsx,vue}']
   },
 
   {
@@ -14,14 +13,39 @@ export default [
     ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**']
   },
 
-  js.configs.recommended,
-  ...pluginVue.configs['flat/essential'],
-
+  // Configuration pour les fichiers frontend
   {
-    name: 'app/vue-rules',
-    files: ['**/*.vue'],
+    files: ['src/**/*.{js,vue}', '!src/server/**/*'],
+    ...js.configs.recommended,
+    ...pluginVue.configs['flat/essential'],
     rules: {
       'vue/multi-word-component-names': 'off'
+    }
+  },
+
+  // Configuration pour les fichiers backend Node.js
+  {
+    files: ['src/server/**/*.js'],
+    languageOptions: {
+      globals: {
+        require: 'readonly',
+        module: 'readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        global: 'readonly',
+        Buffer: 'readonly',
+        console: 'readonly'
+      },
+      sourceType: 'commonjs',
+      ecmaVersion: 2021
+    },
+    rules: {
+      'no-console': 'off',
+      'no-unused-vars': ['error', { 
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_' 
+      }]
     }
   },
 
