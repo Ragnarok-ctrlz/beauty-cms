@@ -4,9 +4,25 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div v-if="isLoading" class="text-center py-12">
-        <svg class="animate-spin h-10 w-10 text-primary mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        <svg
+          class="animate-spin h-10 w-10 text-primary mx-auto"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
         </svg>
         <p class="mt-4 text-gray-600 dark:text-gray-300">Chargement des informations du site...</p>
       </div>
@@ -17,10 +33,16 @@
           <div>
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ siteData.name }}</h1>
             <p class="mt-1 text-gray-600 dark:text-gray-300">
-              <span v-if="siteData.published" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+              <span
+                v-if="siteData.published"
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+              >
                 Publié
               </span>
-              <span v-else class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+              <span
+                v-else
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
+              >
                 Brouillon
               </span>
               <span class="ml-2">Dernière modification: {{ formatDate(siteData.updatedAt) }}</span>
@@ -32,9 +54,25 @@
               @click="previewSite"
               class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
               </svg>
               Aperçu
             </button>
@@ -45,11 +83,22 @@
                 'inline-flex items-center px-4 py-2 border shadow-sm text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary',
                 siteData.published
                   ? 'border-gray-300 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700'
-                  : 'border-transparent text-white bg-primary hover:bg-opacity-90'
+                  : 'border-transparent text-white bg-primary hover:bg-opacity-90',
               ]"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
               {{ siteData.published ? 'Dépublier' : 'Publier' }}
             </button>
@@ -59,12 +108,41 @@
               :disabled="isSaving"
               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             >
-              <svg v-if="isSaving" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <svg
+                v-if="isSaving"
+                class="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
               </svg>
-              <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+                />
               </svg>
               {{ isSaving ? 'Enregistrement...' : 'Enregistrer' }}
             </button>
@@ -82,7 +160,7 @@
                 activeTab === tab.id
                   ? 'border-primary text-primary'
                   : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600',
-                'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm'
+                'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm',
               ]"
             >
               {{ tab.name }}
@@ -94,11 +172,17 @@
         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
           <!-- 1. Informations générales -->
           <div v-if="activeTab === 'general'" class="space-y-6">
-            <h2 class="text-lg font-medium text-gray-900 dark:text-white">Informations générales</h2>
+            <h2 class="text-lg font-medium text-gray-900 dark:text-white">
+              Informations générales
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label for="edit-site-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom de l'institut <span class="text-red-500">*</span></label>
+                <label
+                  for="edit-site-name"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Nom de l'institut <span class="text-red-500">*</span></label
+                >
                 <input
                   id="edit-site-name"
                   v-model="siteData.name"
@@ -109,7 +193,11 @@
               </div>
 
               <div>
-                <label for="edit-site-tagline" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Slogan</label>
+                <label
+                  for="edit-site-tagline"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Slogan</label
+                >
                 <input
                   id="edit-site-tagline"
                   v-model="siteData.tagline"
@@ -120,7 +208,11 @@
             </div>
 
             <div>
-              <label for="edit-site-description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+              <label
+                for="edit-site-description"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >Description</label
+              >
               <textarea
                 id="edit-site-description"
                 v-model="siteData.description"
@@ -131,7 +223,11 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label for="edit-site-phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Téléphone <span class="text-red-500">*</span></label>
+                <label
+                  for="edit-site-phone"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Téléphone <span class="text-red-500">*</span></label
+                >
                 <input
                   id="edit-site-phone"
                   v-model="siteData.phone"
@@ -142,7 +238,11 @@
               </div>
 
               <div>
-                <label for="edit-site-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email <span class="text-red-500">*</span></label>
+                <label
+                  for="edit-site-email"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Email <span class="text-red-500">*</span></label
+                >
                 <input
                   id="edit-site-email"
                   v-model="siteData.email"
@@ -154,7 +254,9 @@
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Adresse</label>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >Adresse</label
+              >
               <div class="grid grid-cols-1 gap-y-3">
                 <input
                   v-model="siteData.address.street"
@@ -185,12 +287,35 @@
             </div>
 
             <div>
-              <label for="edit-site-logo" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Logo</label>
+              <label
+                for="edit-site-logo"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >Logo</label
+              >
               <div class="flex items-center space-x-4">
-                <div class="flex-shrink-0 h-20 w-20 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center overflow-hidden">
-                  <img v-if="siteData.logoUrl" :src="siteData.logoUrl" alt="Logo" class="h-full w-full object-contain" />
-                  <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <div
+                  class="flex-shrink-0 h-20 w-20 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    v-if="siteData.logoUrl"
+                    :src="siteData.logoUrl"
+                    alt="Logo"
+                    class="h-full w-full object-contain"
+                  />
+                  <svg
+                    v-else
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
                   </svg>
                 </div>
 
@@ -201,14 +326,11 @@
                     type="file"
                     accept="image/*"
                     @change="handleLogoUpload"
-                    class="block w-full text-sm text-gray-500 dark:text-gray-400
-                          file:mr-4 file:py-2 file:px-4
-                          file:rounded-md file:border-0
-                          file:text-sm file:font-medium
-                          file:bg-primary file:text-white
-                          hover:file:bg-primary/90"
+                    class="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary file:text-white hover:file:bg-primary/90"
                   />
-                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG ou GIF jusqu'à 1MB (plan gratuit)</p>
+                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                    PNG, JPG ou GIF jusqu'à 1MB (plan gratuit)
+                  </p>
                 </div>
               </div>
             </div>
@@ -222,8 +344,19 @@
                 @click="showAddServiceModal = true"
                 class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
                 </svg>
                 Ajouter un service
               </button>
@@ -231,11 +364,24 @@
 
             <!-- Liste des services -->
             <div v-if="siteData.services.length === 0" class="text-center py-8">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12 mx-auto text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                />
               </svg>
               <p class="mt-4 text-gray-500 dark:text-gray-400">Aucun service n'a été ajouté</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">Ajoutez des services pour présenter vos prestations</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                Ajoutez des services pour présenter vos prestations
+              </p>
             </div>
 
             <div v-else class="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -250,29 +396,49 @@
                     <div class="flex items-center mt-1">
                       <span class="text-primary font-medium">{{ service.price }}</span>
                       <span class="mx-2 text-gray-400">•</span>
-                      <span class="text-gray-500 dark:text-gray-400 text-sm">{{ service.duration }}</span>
+                      <span class="text-gray-500 dark:text-gray-400 text-sm">{{
+                        service.duration
+                      }}</span>
                     </div>
                   </div>
                   <div class="flex space-x-2">
-                    <button
-                      @click="editService(index)"
-                      class="text-gray-400 hover:text-primary"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    <button @click="editService(index)" class="text-gray-400 hover:text-primary">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        />
                       </svg>
                     </button>
-                    <button
-                      @click="removeService(index)"
-                      class="text-gray-400 hover:text-red-500"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    <button @click="removeService(index)" class="text-gray-400 hover:text-red-500">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
                       </svg>
                     </button>
                   </div>
                 </div>
-                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{{ service.description }}</p>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  {{ service.description }}
+                </p>
                 <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">
                   Catégorie: {{ getCategoryLabel(service.category) }}
                 </div>
@@ -288,8 +454,19 @@
                 @click="addTeamMember"
                 class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
                 </svg>
                 Ajouter un membre
               </button>
@@ -297,11 +474,24 @@
 
             <!-- Liste des membres d'équipe -->
             <div v-if="siteData.team.length === 0" class="text-center py-8">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12 mx-auto text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                />
               </svg>
               <p class="mt-4 text-gray-500 dark:text-gray-400">Aucun membre d'équipe ajouté</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">Présentez votre équipe pour personnaliser votre site</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                Présentez votre équipe pour personnaliser votre site
+              </p>
             </div>
 
             <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -311,10 +501,26 @@
                 class="bg-white dark:bg-gray-700 rounded-lg shadow border border-gray-200 dark:border-gray-600 overflow-hidden"
               >
                 <div class="h-48 bg-gray-200 dark:bg-gray-600 relative">
-                  <img v-if="member.photoUrl" :src="member.photoUrl" :alt="member.name" class="w-full h-full object-cover" />
+                  <img
+                    v-if="member.photoUrl"
+                    :src="member.photoUrl"
+                    :alt="member.name"
+                    class="w-full h-full object-cover"
+                  />
                   <div v-else class="w-full h-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-16 w-16 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
                     </svg>
                   </div>
                   <div class="absolute top-2 right-2 flex space-x-1">
@@ -322,16 +528,38 @@
                       @click="editTeamMember(index)"
                       class="p-1 rounded-full bg-white bg-opacity-80 text-gray-700 hover:bg-opacity-100"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        />
                       </svg>
                     </button>
                     <button
                       @click="removeTeamMember(index)"
                       class="p-1 rounded-full bg-white bg-opacity-80 text-red-500 hover:bg-opacity-100"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
                       </svg>
                     </button>
                   </div>
@@ -353,8 +581,19 @@
                 @click="addGalleryImage"
                 class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
                 </svg>
                 Ajouter des images
               </button>
@@ -362,11 +601,24 @@
 
             <!-- Galerie d'images -->
             <div v-if="siteData.gallery.length === 0" class="text-center py-8">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12 mx-auto text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
               <p class="mt-4 text-gray-500 dark:text-gray-400">Aucune image dans la galerie</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">Ajoutez des images pour mettre en valeur votre institut</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                Ajoutez des images pour mettre en valeur votre institut
+              </p>
             </div>
 
             <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -375,16 +627,33 @@
                 :key="index"
                 class="relative rounded-lg overflow-hidden aspect-square"
               >
-                <img :src="image.url" :alt="image.description || 'Image de galerie'" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 hover:opacity-100">
+                <img
+                  :src="image.url"
+                  :alt="image.description || 'Image de galerie'"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 hover:opacity-100"
+                >
                   <div class="flex space-x-2">
                     <button
                       @click="editGalleryImage(index)"
                       class="p-2 rounded-full bg-white text-gray-700"
                       title="Modifier la description"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        />
                       </svg>
                     </button>
                     <button
@@ -392,13 +661,26 @@
                       class="p-2 rounded-full bg-white text-red-500"
                       title="Supprimer l'image"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
                       </svg>
                     </button>
                   </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-xs p-2 truncate">
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-xs p-2 truncate"
+                >
                   {{ image.description || 'Sans description' }}
                 </div>
               </div>
@@ -407,17 +689,35 @@
 
           <!-- 5. Réservations -->
           <div v-else-if="activeTab === 'booking'" class="space-y-6">
-            <h2 class="text-lg font-medium text-gray-900 dark:text-white">Système de réservation</h2>
+            <h2 class="text-lg font-medium text-gray-900 dark:text-white">
+              Système de réservation
+            </h2>
 
-            <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded">
+            <div
+              class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded"
+            >
               <div class="flex">
                 <div class="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-yellow-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                 </div>
                 <div class="ml-3">
-                  <p class="text-sm text-yellow-700 dark:text-yellow-200">Vous avez deux options pour les réservations : utiliser notre système intégré ou rediriger vers votre solution existante.</p>
+                  <p class="text-sm text-yellow-700 dark:text-yellow-200">
+                    Vous avez deux options pour les réservations : utiliser notre système intégré ou
+                    rediriger vers votre solution existante.
+                  </p>
                 </div>
               </div>
             </div>
@@ -432,16 +732,25 @@
                   v-model="siteData.bookingType"
                   class="focus:ring-primary h-4 w-4 text-primary border-gray-300"
                 />
-                <label for="booking-integrated" class="ml-2 block text-sm text-gray-900 dark:text-white">
+                <label
+                  for="booking-integrated"
+                  class="ml-2 block text-sm text-gray-900 dark:text-white"
+                >
                   Utiliser le système intégré
                 </label>
               </div>
 
               <div v-if="siteData.bookingType === 'integrated'" class="ml-6 space-y-4">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Horaires d'ouverture</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Horaires d'ouverture</label
+                  >
                   <div class="space-y-2">
-                    <div v-for="(day, index) in days" :key="index" class="grid grid-cols-5 gap-2 items-center">
+                    <div
+                      v-for="(day, index) in days"
+                      :key="index"
+                      class="grid grid-cols-5 gap-2 items-center"
+                    >
                       <div class="col-span-1">
                         <span class="text-sm">{{ day }}</span>
                       </div>
@@ -464,7 +773,9 @@
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Réglages des créneaux</label>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Réglages des créneaux</label
+                  >
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label class="block text-xs mb-1">Durée des créneaux</label>
@@ -502,14 +813,21 @@
                   v-model="siteData.bookingType"
                   class="focus:ring-primary h-4 w-4 text-primary border-gray-300"
                 />
-                <label for="booking-external" class="ml-2 block text-sm text-gray-900 dark:text-white">
+                <label
+                  for="booking-external"
+                  class="ml-2 block text-sm text-gray-900 dark:text-white"
+                >
                   Rediriger vers ma solution existante
                 </label>
               </div>
 
               <div v-if="siteData.bookingType === 'external'" class="ml-6 space-y-3">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="booking-url">URL de votre système de réservation</label>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    for="booking-url"
+                    >URL de votre système de réservation</label
+                  >
                   <input
                     id="booking-url"
                     v-model="siteData.bookingSettings.externalUrl"
@@ -525,7 +843,10 @@
                     v-model="siteData.bookingSettings.newTab"
                     class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
                   />
-                  <label for="booking-new-tab" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                  <label
+                    for="booking-new-tab"
+                    class="ml-2 block text-sm text-gray-700 dark:text-gray-300"
+                  >
                     Ouvrir dans un nouvel onglet
                   </label>
                 </div>
@@ -538,7 +859,9 @@
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">Apparence du site</h2>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Thème</label>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
+                >Thème</label
+              >
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div
                   v-for="theme in themes"
@@ -546,14 +869,32 @@
                   @click="selectTheme(theme.id)"
                   :class="[
                     'cursor-pointer border-2 rounded-lg overflow-hidden hover:shadow-md transition-shadow',
-                    siteData.theme === theme.id ? 'border-primary' : 'border-gray-200 dark:border-gray-700'
+                    siteData.theme === theme.id
+                      ? 'border-primary'
+                      : 'border-gray-200 dark:border-gray-700',
                   ]"
                 >
                   <div class="h-32 bg-gray-100 dark:bg-gray-800 relative">
-                    <img :src="theme.preview" :alt="theme.name" class="w-full h-full object-cover" />
-                    <div v-if="siteData.theme === theme.id" class="absolute top-2 right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    <img
+                      :src="theme.preview"
+                      :alt="theme.name"
+                      class="w-full h-full object-cover"
+                    />
+                    <div
+                      v-if="siteData.theme === theme.id"
+                      class="absolute top-2 right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        />
                       </svg>
                     </div>
                   </div>
@@ -566,10 +907,16 @@
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Couleurs</label>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
+                >Couleurs</label
+              >
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="primary-color" class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Couleur primaire</label>
+                  <label
+                    for="primary-color"
+                    class="block text-xs text-gray-500 dark:text-gray-400 mb-1"
+                    >Couleur primaire</label
+                  >
                   <div class="flex items-center">
                     <input
                       id="primary-color"
@@ -588,7 +935,11 @@
                 </div>
 
                 <div>
-                  <label for="secondary-color" class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Couleur secondaire</label>
+                  <label
+                    for="secondary-color"
+                    class="block text-xs text-gray-500 dark:text-gray-400 mb-1"
+                    >Couleur secondaire</label
+                  >
                   <div class="flex items-center">
                     <input
                       id="secondary-color"
@@ -615,19 +966,27 @@
     <!-- Modales pour l'ajout/édition des services, membres d'équipe et images -->
     <!-- Modal Ajout Service -->
     <div v-if="showAddServiceModal" class="fixed inset-0 overflow-y-auto z-50">
-      <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+      <div
+        class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+      >
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
           <div class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75"></div>
         </div>
 
-        <div class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div
+          class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        >
           <div class="bg-white dark:bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">
               {{ editingServiceIndex !== null ? 'Modifier le service' : 'Ajouter un service' }}
             </h3>
             <div class="mt-4 space-y-4">
               <div>
-                <label for="service-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom du service <span class="text-red-500">*</span></label>
+                <label
+                  for="service-name"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Nom du service <span class="text-red-500">*</span></label
+                >
                 <input
                   id="service-name"
                   v-model="serviceForm.name"
@@ -639,7 +998,11 @@
               </div>
 
               <div>
-                <label for="service-description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                <label
+                  for="service-description"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Description</label
+                >
                 <textarea
                   id="service-description"
                   v-model="serviceForm.description"
@@ -651,7 +1014,11 @@
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="service-price" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Prix <span class="text-red-500">*</span></label>
+                  <label
+                    for="service-price"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Prix <span class="text-red-500">*</span></label
+                  >
                   <input
                     id="service-price"
                     v-model="serviceForm.price"
@@ -662,7 +1029,11 @@
                   />
                 </div>
                 <div>
-                  <label for="service-duration" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Durée <span class="text-red-500">*</span></label>
+                  <label
+                    for="service-duration"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Durée <span class="text-red-500">*</span></label
+                  >
                   <input
                     id="service-duration"
                     v-model="serviceForm.duration"
@@ -675,7 +1046,11 @@
               </div>
 
               <div>
-                <label for="service-category" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Catégorie</label>
+                <label
+                  for="service-category"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Catégorie</label
+                >
                 <select
                   id="service-category"
                   v-model="serviceForm.category"
@@ -712,19 +1087,31 @@
 
     <!-- Modal Ajout/Édition Membre d'Équipe -->
     <div v-if="showAddTeamModal" class="fixed inset-0 overflow-y-auto z-50">
-      <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+      <div
+        class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+      >
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
           <div class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75"></div>
         </div>
 
-        <div class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div
+          class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        >
           <div class="bg-white dark:bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">
-              {{ editingTeamMemberIndex !== null ? 'Modifier le membre' : 'Ajouter un membre d\'équipe' }}
+              {{
+                editingTeamMemberIndex !== null
+                  ? 'Modifier le membre'
+                  : "Ajouter un membre d'équipe"
+              }}
             </h3>
             <div class="mt-4 space-y-4">
               <div>
-                <label for="team-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom <span class="text-red-500">*</span></label>
+                <label
+                  for="team-name"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Nom <span class="text-red-500">*</span></label
+                >
                 <input
                   id="team-name"
                   v-model="teamForm.name"
@@ -736,7 +1123,11 @@
               </div>
 
               <div>
-                <label for="team-position" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Poste <span class="text-red-500">*</span></label>
+                <label
+                  for="team-position"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Poste <span class="text-red-500">*</span></label
+                >
                 <input
                   id="team-position"
                   v-model="teamForm.position"
@@ -748,7 +1139,11 @@
               </div>
 
               <div>
-                <label for="team-bio" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Biographie</label>
+                <label
+                  for="team-bio"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Biographie</label
+                >
                 <textarea
                   id="team-bio"
                   v-model="teamForm.bio"
@@ -759,12 +1154,33 @@
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Photo</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Photo</label
+                >
                 <div class="flex items-center space-x-4">
-                  <div class="h-24 w-24 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center overflow-hidden">
-                    <img v-if="teamForm.photoUrl" :src="teamForm.photoUrl" alt="Photo" class="h-full w-full object-cover" />
-                    <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  <div
+                    class="h-24 w-24 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center overflow-hidden"
+                  >
+                    <img
+                      v-if="teamForm.photoUrl"
+                      :src="teamForm.photoUrl"
+                      alt="Photo"
+                      class="h-full w-full object-cover"
+                    />
+                    <svg
+                      v-else
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-12 w-12 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
                     </svg>
                   </div>
 
@@ -775,14 +1191,11 @@
                       type="file"
                       accept="image/*"
                       @change="handleTeamPhotoUpload"
-                      class="block w-full text-sm text-gray-500 dark:text-gray-400
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-md file:border-0
-                            file:text-sm file:font-medium
-                            file:bg-primary file:text-white
-                            hover:file:bg-primary/90"
+                      class="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary file:text-white hover:file:bg-primary/90"
                     />
-                    <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG ou GIF jusqu'à 500KB (plan gratuit)</p>
+                    <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                      PNG, JPG ou GIF jusqu'à 500KB (plan gratuit)
+                    </p>
                   </div>
                 </div>
               </div>
@@ -810,24 +1223,53 @@
 
     <!-- Modal Ajout/Édition Image Galerie -->
     <div v-if="showAddGalleryModal" class="fixed inset-0 overflow-y-auto z-50">
-      <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+      <div
+        class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+      >
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
           <div class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75"></div>
         </div>
 
-        <div class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div
+          class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        >
           <div class="bg-white dark:bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">
-              {{ editingGalleryImageIndex !== null ? 'Modifier l\'image' : 'Ajouter une image à la galerie' }}
+              {{
+                editingGalleryImageIndex !== null
+                  ? "Modifier l'image"
+                  : 'Ajouter une image à la galerie'
+              }}
             </h3>
             <div class="mt-4 space-y-4">
               <div v-if="editingGalleryImageIndex === null">
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Image</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >Image</label
+                >
                 <div>
-                  <div class="relative h-40 w-full mb-4 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                    <img v-if="galleryForm.file" :src="galleryForm.previewUrl" alt="Preview" class="h-full w-full object-contain" />
-                    <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  <div
+                    class="relative h-40 w-full mb-4 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center"
+                  >
+                    <img
+                      v-if="galleryForm.file"
+                      :src="galleryForm.previewUrl"
+                      alt="Preview"
+                      class="h-full w-full object-contain"
+                    />
+                    <svg
+                      v-else
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-16 w-16 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
                     </svg>
                   </div>
 
@@ -837,25 +1279,33 @@
                     type="file"
                     accept="image/*"
                     @change="handleGalleryImageUpload"
-                    class="block w-full text-sm text-gray-500 dark:text-gray-400
-                          file:mr-4 file:py-2 file:px-4
-                          file:rounded-md file:border-0
-                          file:text-sm file:font-medium
-                          file:bg-primary file:text-white
-                          hover:file:bg-primary/90"
+                    class="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary file:text-white hover:file:bg-primary/90"
                   />
-                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG ou GIF jusqu'à 1MB (plan gratuit)</p>
+                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                    PNG, JPG ou GIF jusqu'à 1MB (plan gratuit)
+                  </p>
                 </div>
               </div>
 
               <div v-else>
-                <div class="h-48 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center overflow-hidden mb-4">
-                  <img v-if="galleryForm.url" :src="galleryForm.url" alt="Image" class="h-full w-full object-contain" />
+                <div
+                  class="h-48 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center overflow-hidden mb-4"
+                >
+                  <img
+                    v-if="galleryForm.url"
+                    :src="galleryForm.url"
+                    alt="Image"
+                    class="h-full w-full object-contain"
+                  />
                 </div>
               </div>
 
               <div>
-                <label for="gallery-description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                <label
+                  for="gallery-description"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Description</label
+                >
                 <textarea
                   id="gallery-description"
                   v-model="galleryForm.description"
@@ -866,7 +1316,11 @@
               </div>
 
               <div v-if="editingGalleryImageIndex === null">
-                <p class="text-sm">Astuce: Pour le plan gratuit, nous générons actuellement une image de démonstration. Dans la version payante, vous pourrez télécharger vos propres images.</p>
+                <p class="text-sm">
+                  Astuce: Pour le plan gratuit, nous générons actuellement une image de
+                  démonstration. Dans la version payante, vous pourrez télécharger vos propres
+                  images.
+                </p>
               </div>
             </div>
           </div>
@@ -899,44 +1353,87 @@
 
         <div class="relative flex flex-col bg-white dark:bg-gray-800 shadow-xl min-h-screen w-full">
           <!-- Barre d'outils de prévisualisation -->
-          <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+          <div
+            class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700"
+          >
             <div class="flex items-center">
-              <h3 class="text-lg font-medium text-gray-900 dark:text-white">Prévisualisation: {{ siteData.name }}</h3>
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                Prévisualisation: {{ siteData.name }}
+              </h3>
               <div class="ml-4 flex space-x-2">
                 <button
                   @click="previewDevice = 'desktop'"
                   :class="[
                     'p-2 rounded-md',
-                    previewDevice === 'desktop' ? 'bg-primary text-white' : 'text-gray-700 dark:text-gray-300'
+                    previewDevice === 'desktop'
+                      ? 'bg-primary text-white'
+                      : 'text-gray-700 dark:text-gray-300',
                   ]"
                   title="Affichage Bureau"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
                 </button>
                 <button
                   @click="previewDevice = 'tablet'"
                   :class="[
                     'p-2 rounded-md',
-                    previewDevice === 'tablet' ? 'bg-primary text-white' : 'text-gray-700 dark:text-gray-300'
+                    previewDevice === 'tablet'
+                      ? 'bg-primary text-white'
+                      : 'text-gray-700 dark:text-gray-300',
                   ]"
                   title="Affichage Tablette"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    />
                   </svg>
                 </button>
                 <button
                   @click="previewDevice = 'mobile'"
                   :class="[
                     'p-2 rounded-md',
-                    previewDevice === 'mobile' ? 'bg-primary text-white' : 'text-gray-700 dark:text-gray-300'
+                    previewDevice === 'mobile'
+                      ? 'bg-primary text-white'
+                      : 'text-gray-700 dark:text-gray-300',
                   ]"
                   title="Affichage Mobile"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    />
                   </svg>
                 </button>
               </div>
@@ -946,42 +1443,113 @@
               class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
             >
               <span class="sr-only">Fermer</span>
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
 
           <!-- Iframe de prévisualisation avec taille adaptative -->
-          <div class="flex-grow flex items-center justify-center bg-gray-100 dark:bg-gray-900 overflow-auto p-4">
-            <div :class="[
-              'bg-white transition-all duration-300 shadow-lg overflow-hidden',
-              previewDevice === 'desktop' ? 'w-full h-full' :
-              previewDevice === 'tablet' ? 'w-[768px] h-[1024px]' :
-              'w-[375px] h-[667px]'
-            ]">
+          <div
+            class="flex-grow flex items-center justify-center bg-gray-100 dark:bg-gray-900 overflow-auto p-4"
+          >
+            <div
+              :class="[
+                'bg-white transition-all duration-300 shadow-lg overflow-hidden',
+                previewDevice === 'desktop'
+                  ? 'w-full h-full'
+                  : previewDevice === 'tablet'
+                    ? 'w-[768px] h-[1024px]'
+                    : 'w-[375px] h-[667px]',
+              ]"
+            >
               <div class="w-full h-full overflow-auto">
                 <!-- Intégrer la prévisualisation du site ici -->
-                <div class="p-4 h-full" :style="{backgroundColor: siteData.colors.primary + '10'}">
+                <div
+                  class="p-4 h-full"
+                  :style="{ backgroundColor: siteData.colors.primary + '10' }"
+                >
                   <!-- En-tête du site -->
                   <header class="mb-8">
-                    <div class="flex items-center justify-between mb-6" :style="{borderBottom: '1px solid ' + siteData.colors.primary + '30', paddingBottom: '1rem'}">
+                    <div
+                      class="flex items-center justify-between mb-6"
+                      :style="{
+                        borderBottom: '1px solid ' + siteData.colors.primary + '30',
+                        paddingBottom: '1rem',
+                      }"
+                    >
                       <div class="flex items-center">
                         <div v-if="siteData.logoUrl" class="h-16 w-16 mr-4">
-                          <img :src="siteData.logoUrl" alt="Logo" class="h-full w-full object-contain" />
+                          <img
+                            :src="siteData.logoUrl"
+                            alt="Logo"
+                            class="h-full w-full object-contain"
+                          />
                         </div>
                         <div>
-                          <h1 class="text-2xl font-bold" :style="{color: siteData.colors.primary}">{{ siteData.name }}</h1>
+                          <h1
+                            class="text-2xl font-bold"
+                            :style="{ color: siteData.colors.primary }"
+                          >
+                            {{ siteData.name }}
+                          </h1>
                           <p v-if="siteData.tagline" class="text-sm">{{ siteData.tagline }}</p>
                         </div>
                       </div>
                       <nav class="hidden sm:block">
                         <ul class="flex space-x-4">
-                          <li><a href="#" class="hover:underline" :style="{color: siteData.colors.primary}">Accueil</a></li>
-                          <li><a href="#services" class="hover:underline" :style="{color: siteData.colors.secondary}">Services</a></li>
-                          <li><a href="#team" class="hover:underline" :style="{color: siteData.colors.secondary}">Équipe</a></li>
-                          <li><a href="#contact" class="hover:underline" :style="{color: siteData.colors.secondary}">Contact</a></li>
-                          <li><a href="#" class="px-3 py-1 rounded-md text-white" :style="{backgroundColor: siteData.colors.primary}">Réservation</a></li>
+                          <li>
+                            <a
+                              href="#"
+                              class="hover:underline"
+                              :style="{ color: siteData.colors.primary }"
+                              >Accueil</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#services"
+                              class="hover:underline"
+                              :style="{ color: siteData.colors.secondary }"
+                              >Services</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#team"
+                              class="hover:underline"
+                              :style="{ color: siteData.colors.secondary }"
+                              >Équipe</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#contact"
+                              class="hover:underline"
+                              :style="{ color: siteData.colors.secondary }"
+                              >Contact</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="px-3 py-1 rounded-md text-white"
+                              :style="{ backgroundColor: siteData.colors.primary }"
+                              >Réservation</a
+                            >
+                          </li>
                         </ul>
                       </nav>
                     </div>
@@ -992,25 +1560,59 @@
                     <!-- Introduction -->
                     <section class="mb-12 text-center">
                       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-                        <h2 class="text-3xl font-bold mb-4" :style="{color: siteData.colors.primary}">Bienvenue chez {{ siteData.name }}</h2>
-                        <p class="text-lg mb-6">{{ siteData.description || 'Description de votre institut de beauté...' }}</p>
-                        <a href="#contact" class="inline-block px-6 py-3 rounded-md text-white" :style="{backgroundColor: siteData.colors.primary}">Nous contacter</a>
+                        <h2
+                          class="text-3xl font-bold mb-4"
+                          :style="{ color: siteData.colors.primary }"
+                        >
+                          Bienvenue chez {{ siteData.name }}
+                        </h2>
+                        <p class="text-lg mb-6">
+                          {{ siteData.description || 'Description de votre institut de beauté...' }}
+                        </p>
+                        <a
+                          href="#contact"
+                          class="inline-block px-6 py-3 rounded-md text-white"
+                          :style="{ backgroundColor: siteData.colors.primary }"
+                          >Nous contacter</a
+                        >
                       </div>
                     </section>
 
                     <!-- Services -->
                     <section id="services" class="mb-12">
-                      <h2 class="text-2xl font-bold mb-6 text-center" :style="{color: siteData.colors.primary}">Nos Services</h2>
+                      <h2
+                        class="text-2xl font-bold mb-6 text-center"
+                        :style="{ color: siteData.colors.primary }"
+                      >
+                        Nos Services
+                      </h2>
 
-                      <div v-if="siteData.services.length === 0" class="text-center py-8 bg-gray-50 rounded-lg">
+                      <div
+                        v-if="siteData.services.length === 0"
+                        class="text-center py-8 bg-gray-50 rounded-lg"
+                      >
                         <p class="text-gray-500">Aucun service n'a été ajouté</p>
                       </div>
 
                       <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div v-for="(service, index) in siteData.services" :key="index" class="p-6 rounded-lg" :style="{backgroundColor: siteData.colors.primary + '10'}">
-                          <h3 class="text-xl font-bold mb-2" :style="{color: siteData.colors.primary}">{{ service.name }}</h3>
+                        <div
+                          v-for="(service, index) in siteData.services"
+                          :key="index"
+                          class="p-6 rounded-lg"
+                          :style="{ backgroundColor: siteData.colors.primary + '10' }"
+                        >
+                          <h3
+                            class="text-xl font-bold mb-2"
+                            :style="{ color: siteData.colors.primary }"
+                          >
+                            {{ service.name }}
+                          </h3>
                           <div class="flex justify-between mb-2">
-                            <span class="font-medium" :style="{color: siteData.colors.secondary}">{{ service.price }}</span>
+                            <span
+                              class="font-medium"
+                              :style="{ color: siteData.colors.secondary }"
+                              >{{ service.price }}</span
+                            >
                             <span class="text-sm text-gray-500">{{ service.duration }}</span>
                           </div>
                           <p class="text-sm text-gray-600">{{ service.description }}</p>
@@ -1020,19 +1622,43 @@
 
                     <!-- Équipe -->
                     <section id="team" class="mb-12">
-                      <h2 class="text-2xl font-bold mb-6 text-center" :style="{color: siteData.colors.primary}">Notre Équipe</h2>
+                      <h2
+                        class="text-2xl font-bold mb-6 text-center"
+                        :style="{ color: siteData.colors.primary }"
+                      >
+                        Notre Équipe
+                      </h2>
 
-                      <div v-if="siteData.team.length === 0" class="text-center py-8 bg-gray-50 rounded-lg">
+                      <div
+                        v-if="siteData.team.length === 0"
+                        class="text-center py-8 bg-gray-50 rounded-lg"
+                      >
                         <p class="text-gray-500">Aucun membre d'équipe ajouté</p>
                       </div>
 
                       <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        <div v-for="(member, index) in siteData.team" :key="index" class="text-center">
+                        <div
+                          v-for="(member, index) in siteData.team"
+                          :key="index"
+                          class="text-center"
+                        >
                           <div class="h-40 w-40 rounded-full overflow-hidden mx-auto mb-4">
-                            <img v-if="member.photoUrl" :src="member.photoUrl" :alt="member.name" class="w-full h-full object-cover" />
+                            <img
+                              v-if="member.photoUrl"
+                              :src="member.photoUrl"
+                              :alt="member.name"
+                              class="w-full h-full object-cover"
+                            />
                           </div>
-                          <h3 class="text-lg font-bold" :style="{color: siteData.colors.primary}">{{ member.name }}</h3>
-                          <p class="text-sm font-medium mb-2" :style="{color: siteData.colors.secondary}">{{ member.position }}</p>
+                          <h3 class="text-lg font-bold" :style="{ color: siteData.colors.primary }">
+                            {{ member.name }}
+                          </h3>
+                          <p
+                            class="text-sm font-medium mb-2"
+                            :style="{ color: siteData.colors.secondary }"
+                          >
+                            {{ member.position }}
+                          </p>
                           <p class="text-sm text-gray-600">{{ member.bio }}</p>
                         </div>
                       </div>
@@ -1040,28 +1666,71 @@
 
                     <!-- Galerie -->
                     <section class="mb-12" v-if="siteData.gallery.length > 0">
-                      <h2 class="text-2xl font-bold mb-6 text-center" :style="{color: siteData.colors.primary}">Galerie</h2>
+                      <h2
+                        class="text-2xl font-bold mb-6 text-center"
+                        :style="{ color: siteData.colors.primary }"
+                      >
+                        Galerie
+                      </h2>
 
                       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div v-for="(image, index) in siteData.gallery" :key="index" class="relative rounded-lg overflow-hidden aspect-square">
-                          <img :src="image.url" :alt="image.description || 'Image de galerie'" class="w-full h-full object-cover" />
+                        <div
+                          v-for="(image, index) in siteData.gallery"
+                          :key="index"
+                          class="relative rounded-lg overflow-hidden aspect-square"
+                        >
+                          <img
+                            :src="image.url"
+                            :alt="image.description || 'Image de galerie'"
+                            class="w-full h-full object-cover"
+                          />
                         </div>
                       </div>
                     </section>
 
                     <!-- Contact -->
                     <section id="contact" class="mb-12">
-                      <h2 class="text-2xl font-bold mb-6 text-center" :style="{color: siteData.colors.primary}">Contact & Horaires</h2>
+                      <h2
+                        class="text-2xl font-bold mb-6 text-center"
+                        :style="{ color: siteData.colors.primary }"
+                      >
+                        Contact & Horaires
+                      </h2>
 
                       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="p-6 rounded-lg" :style="{backgroundColor: siteData.colors.primary + '10'}">
-                          <h3 class="text-xl font-bold mb-4" :style="{color: siteData.colors.primary}">Coordonnées</h3>
+                        <div
+                          class="p-6 rounded-lg"
+                          :style="{ backgroundColor: siteData.colors.primary + '10' }"
+                        >
+                          <h3
+                            class="text-xl font-bold mb-4"
+                            :style="{ color: siteData.colors.primary }"
+                          >
+                            Coordonnées
+                          </h3>
 
                           <div class="space-y-3">
                             <div class="flex items-start">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5" :style="{color: siteData.colors.secondary}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 mt-0.5"
+                                :style="{ color: siteData.colors.secondary }"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                />
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
                               </svg>
                               <div>
                                 <p>{{ siteData.address.street }}</p>
@@ -1070,28 +1739,63 @@
                             </div>
 
                             <div class="flex items-center">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" :style="{color: siteData.colors.secondary}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2"
+                                :style="{ color: siteData.colors.secondary }"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                />
                               </svg>
                               <p>{{ siteData.phone }}</p>
                             </div>
 
                             <div class="flex items-center">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" :style="{color: siteData.colors.secondary}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2"
+                                :style="{ color: siteData.colors.secondary }"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                />
                               </svg>
                               <p>{{ siteData.email }}</p>
                             </div>
                           </div>
                         </div>
 
-                        <div class="p-6 rounded-lg" :style="{backgroundColor: siteData.colors.primary + '10'}">
-                          <h3 class="text-xl font-bold mb-4" :style="{color: siteData.colors.primary}">Horaires d'ouverture</h3>
+                        <div
+                          class="p-6 rounded-lg"
+                          :style="{ backgroundColor: siteData.colors.primary + '10' }"
+                        >
+                          <h3
+                            class="text-xl font-bold mb-4"
+                            :style="{ color: siteData.colors.primary }"
+                          >
+                            Horaires d'ouverture
+                          </h3>
 
                           <div class="space-y-2">
                             <div v-for="(day, index) in days" :key="index" class="grid grid-cols-3">
                               <div class="font-medium">{{ day }}</div>
-                              <div class="col-span-2" v-if="siteData.hours[index].open && siteData.hours[index].close">
+                              <div
+                                class="col-span-2"
+                                v-if="siteData.hours[index].open && siteData.hours[index].close"
+                              >
                                 {{ siteData.hours[index].open }} - {{ siteData.hours[index].close }}
                               </div>
                               <div class="col-span-2" v-else>Fermé</div>
@@ -1103,8 +1807,14 @@
                   </main>
 
                   <!-- Pied de page -->
-                  <footer class="mt-12 pt-6 text-center text-sm text-gray-500" :style="{borderTop: '1px solid ' + siteData.colors.primary + '30'}">
-                    <p>&copy; {{ new Date().getFullYear() }} {{ siteData.name }} - Tous droits réservés</p>
+                  <footer
+                    class="mt-12 pt-6 text-center text-sm text-gray-500"
+                    :style="{ borderTop: '1px solid ' + siteData.colors.primary + '30' }"
+                  >
+                    <p>
+                      &copy; {{ new Date().getFullYear() }} {{ siteData.name }} - Tous droits
+                      réservés
+                    </p>
                     <p class="mt-2">Créé avec BeautyCMS</p>
                   </footer>
                 </div>
@@ -1122,7 +1832,7 @@ import { ref, reactive, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useCurrentUser } from 'vuefire'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
-import { db } from '@/firebase'
+import { db } from '@/services'
 import DashboardNav from '@/components/dashboard/DashboardNav.vue'
 import { convertToBase64, validateImageFile, getPlaceholderImage } from '@/utils/imageUtils'
 
@@ -1156,13 +1866,15 @@ const siteData = reactive({
   address: {
     street: '',
     postalCode: '',
-    city: ''
+    city: '',
   },
-  hours: Array(7).fill().map(() => ({ open: '09:00', close: '18:00' })),
+  hours: Array(7)
+    .fill()
+    .map(() => ({ open: '09:00', close: '18:00' })),
   theme: 'elegant',
   colors: {
     primary: '#5D5CDE',
-    secondary: '#FF6B9A'
+    secondary: '#FF6B9A',
   },
   logoUrl: '',
   services: [],
@@ -1173,11 +1885,11 @@ const siteData = reactive({
     slotDuration: '30',
     breakTime: '15',
     externalUrl: '',
-    newTab: true
+    newTab: true,
   },
   published: false,
   createdAt: null,
-  updatedAt: null
+  updatedAt: null,
 })
 
 // Formulaire pour les services
@@ -1186,7 +1898,7 @@ const serviceForm = reactive({
   description: '',
   price: '',
   duration: '',
-  category: 'hair'
+  category: 'hair',
 })
 
 // Formulaire pour les membres d'équipe
@@ -1194,7 +1906,7 @@ const teamForm = reactive({
   name: '',
   position: '',
   bio: '',
-  photoUrl: ''
+  photoUrl: '',
 })
 
 // Formulaire pour les images de galerie
@@ -1202,7 +1914,7 @@ const galleryForm = reactive({
   file: null,
   previewUrl: '',
   url: '',
-  description: ''
+  description: '',
 })
 
 // Liste d'onglets
@@ -1212,13 +1924,11 @@ const tabs = [
   { id: 'team', name: 'Équipe' },
   { id: 'gallery', name: 'Galerie' },
   { id: 'booking', name: 'Réservations' },
-  { id: 'appearance', name: 'Apparence' }
+  { id: 'appearance', name: 'Apparence' },
 ]
 
 // Jours de la semaine
-const days = [
-  'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'
-]
+const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
 
 // Thèmes disponibles
 const themes = [
@@ -1226,20 +1936,20 @@ const themes = [
     id: 'elegant',
     name: 'Élégant',
     description: 'Un design minimaliste et raffiné',
-    preview: 'https://picsum.photos/id/1056/300/200'
+    preview: 'https://picsum.photos/id/1056/300/200',
   },
   {
     id: 'modern',
     name: 'Moderne',
     description: 'Un look contemporain et dynamique',
-    preview: 'https://picsum.photos/id/1047/300/200'
+    preview: 'https://picsum.photos/id/1047/300/200',
   },
   {
     id: 'cozy',
     name: 'Chaleureux',
     description: 'Une ambiance chaleureuse et accueillante',
-    preview: 'https://picsum.photos/id/1062/300/200'
-  }
+    preview: 'https://picsum.photos/id/1062/300/200',
+  },
 ]
 
 // Chargement des données du site au montage du composant
@@ -1263,7 +1973,7 @@ const loadSiteData = async () => {
     const siteSnapshot = await getDoc(siteRef)
 
     if (!siteSnapshot.exists()) {
-      alert('Ce site n\'existe pas.')
+      alert("Ce site n'existe pas.")
       router.push('/dashboard')
       return
     }
@@ -1272,13 +1982,13 @@ const loadSiteData = async () => {
 
     // Vérifier que l'utilisateur actuel est bien le propriétaire du site
     if (siteDataFromDb.ownerId !== user.value?.uid) {
-      alert('Vous n\'êtes pas autorisé à modifier ce site.')
+      alert("Vous n'êtes pas autorisé à modifier ce site.")
       router.push('/dashboard')
       return
     }
 
     // Mettre à jour les données du site
-    Object.keys(siteDataFromDb).forEach(key => {
+    Object.keys(siteDataFromDb).forEach((key) => {
       if (key in siteData) {
         siteData[key] = siteDataFromDb[key]
       }
@@ -1290,7 +2000,7 @@ const loadSiteData = async () => {
         slotDuration: '30',
         breakTime: '15',
         externalUrl: '',
-        newTab: true
+        newTab: true,
       }
     }
 
@@ -1300,7 +2010,9 @@ const loadSiteData = async () => {
 
     // S'assurer que hours contient 7 jours
     if (!siteData.hours || siteData.hours.length < 7) {
-      siteData.hours = Array(7).fill().map(() => ({ open: '09:00', close: '18:00' }))
+      siteData.hours = Array(7)
+        .fill()
+        .map(() => ({ open: '09:00', close: '18:00' }))
     }
   } catch (error) {
     console.error('Erreur lors du chargement des données du site:', error)
@@ -1325,8 +2037,8 @@ const saveChanges = async () => {
 
     alert('Les modifications ont été enregistrées avec succès.')
   } catch (error) {
-    console.error('Erreur lors de l\'enregistrement des modifications:', error)
-    alert('Une erreur est survenue lors de l\'enregistrement des modifications.')
+    console.error("Erreur lors de l'enregistrement des modifications:", error)
+    alert("Une erreur est survenue lors de l'enregistrement des modifications.")
   } finally {
     isSaving.value = false
   }
@@ -1357,7 +2069,7 @@ const publishSite = async () => {
     await updateDoc(siteRef, {
       published: siteData.published,
       updatedAt: siteData.updatedAt,
-      url: siteData.url
+      url: siteData.url,
     })
 
     alert(siteData.published ? 'Site publié avec succès!' : 'Site dépublié avec succès!')
@@ -1398,11 +2110,11 @@ const selectTheme = (themeId) => {
 // Obtenir le libellé d'une catégorie
 const getCategoryLabel = (categoryId) => {
   const categories = {
-    'hair': 'Coiffure',
-    'facial': 'Soins du visage',
-    'body': 'Soins du corps',
-    'nails': 'Manucure/Pédicure',
-    'other': 'Autre'
+    hair: 'Coiffure',
+    facial: 'Soins du visage',
+    body: 'Soins du corps',
+    nails: 'Manucure/Pédicure',
+    other: 'Autre',
   }
 
   return categories[categoryId] || categoryId
@@ -1418,7 +2130,7 @@ const formatDate = (timestamp) => {
     month: '2-digit',
     year: 'numeric',
     hour: '2-digit',
-    minute: '2-digit'
+    minute: '2-digit',
   })
 }
 
@@ -1438,7 +2150,7 @@ const saveService = () => {
     description: serviceForm.description,
     price: serviceForm.price,
     duration: serviceForm.duration,
-    category: serviceForm.category
+    category: serviceForm.category,
   }
 
   if (editingServiceIndex.value !== null) {
@@ -1527,7 +2239,7 @@ const saveTeamMember = () => {
     name: teamForm.name,
     position: teamForm.position,
     bio: teamForm.bio,
-    photoUrl: teamForm.photoUrl || getPlaceholderImage(300, 300)
+    photoUrl: teamForm.photoUrl || getPlaceholderImage(300, 300),
   }
 
   if (editingTeamMemberIndex.value !== null) {
@@ -1582,7 +2294,7 @@ const handleTeamPhotoUpload = async (event) => {
 
 // Supprimer un membre d'équipe
 const removeTeamMember = (index) => {
-  if (confirm('Êtes-vous sûr de vouloir supprimer ce membre d\'équipe ?')) {
+  if (confirm("Êtes-vous sûr de vouloir supprimer ce membre d'équipe ?")) {
     siteData.team.splice(index, 1)
   }
 }
@@ -1626,7 +2338,7 @@ const saveGalleryImage = () => {
   // Créer l'objet image
   const image = {
     url: imageUrl,
-    description: galleryForm.description
+    description: galleryForm.description,
   }
 
   if (editingGalleryImageIndex.value !== null) {
@@ -1676,8 +2388,8 @@ const handleGalleryImageUpload = async (event) => {
     }
     fileReader.readAsDataURL(file)
   } catch (error) {
-    console.error('Erreur lors du téléchargement de l\'image:', error)
-    alert('Une erreur est survenue lors du téléchargement de l\'image.')
+    console.error("Erreur lors du téléchargement de l'image:", error)
+    alert("Une erreur est survenue lors du téléchargement de l'image.")
   }
 }
 

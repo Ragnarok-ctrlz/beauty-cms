@@ -1,0 +1,18 @@
+# Dossiers à ignorer
+dist/
+dist-ssr/
+coverage/
+node_modules/
+
+# Fichiers de build
+*.tsbuildinfo
+
+# Fichiers de config
+.env
+.env.*
+
+# Fichiers temporaires
+*.log
+*.pid
+*.seed
+*.pid.lock

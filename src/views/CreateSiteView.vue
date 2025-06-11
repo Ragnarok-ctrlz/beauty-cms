@@ -5,7 +5,9 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="mb-8">
         <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Créer un nouveau site</h1>
-        <p class="mt-1 text-gray-600 dark:text-gray-300">Remplissez les informations de base pour commencer</p>
+        <p class="mt-1 text-gray-600 dark:text-gray-300">
+          Remplissez les informations de base pour commencer
+        </p>
       </div>
 
       <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
@@ -15,13 +17,19 @@
             <div class="bg-gray-50 dark:bg-gray-700 px-4 py-3 rounded-lg">
               <div class="flex items-center">
                 <div class="flex-shrink-0">
-                  <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center">
+                  <span
+                    class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center"
+                  >
                     {{ currentStep }}
                   </span>
                 </div>
                 <div class="ml-3">
-                  <h3 class="text-lg font-medium text-gray-900 dark:text-white">{{ stepTitles[currentStep-1] }}</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">{{ stepDescriptions[currentStep-1] }}</p>
+                  <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                    {{ stepTitles[currentStep - 1] }}
+                  </h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    {{ stepDescriptions[currentStep - 1] }}
+                  </p>
                 </div>
               </div>
             </div>
@@ -29,7 +37,11 @@
             <!-- Étape 1: Informations générales -->
             <div v-if="currentStep === 1">
               <div class="mb-4">
-                <label for="site-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom de l'institut <span class="text-red-500">*</span></label>
+                <label
+                  for="site-name"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Nom de l'institut <span class="text-red-500">*</span></label
+                >
                 <input
                   id="site-name"
                   v-model="siteData.name"
@@ -40,7 +52,11 @@
               </div>
 
               <div class="mb-4">
-                <label for="site-tagline" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Slogan</label>
+                <label
+                  for="site-tagline"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Slogan</label
+                >
                 <input
                   id="site-tagline"
                   v-model="siteData.tagline"
@@ -51,7 +67,11 @@
               </div>
 
               <div class="mb-4">
-                <label for="site-description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                <label
+                  for="site-description"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Description</label
+                >
                 <textarea
                   id="site-description"
                   v-model="siteData.description"
@@ -63,7 +83,11 @@
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label for="site-phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Téléphone <span class="text-red-500">*</span></label>
+                  <label
+                    for="site-phone"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Téléphone <span class="text-red-500">*</span></label
+                  >
                   <input
                     id="site-phone"
                     v-model="siteData.phone"
@@ -75,7 +99,11 @@
                 </div>
 
                 <div>
-                  <label for="site-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email <span class="text-red-500">*</span></label>
+                  <label
+                    for="site-email"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Email <span class="text-red-500">*</span></label
+                  >
                   <input
                     id="site-email"
                     v-model="siteData.email"
@@ -91,7 +119,11 @@
             <!-- Étape 2: Adresse et emplacement -->
             <div v-if="currentStep === 2">
               <div class="mb-4">
-                <label for="site-address" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Adresse <span class="text-red-500">*</span></label>
+                <label
+                  for="site-address"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Adresse <span class="text-red-500">*</span></label
+                >
                 <input
                   id="site-address"
                   v-model="siteData.address.street"
@@ -104,7 +136,11 @@
 
               <div class="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label for="site-postal-code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Code postal <span class="text-red-500">*</span></label>
+                  <label
+                    for="site-postal-code"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Code postal <span class="text-red-500">*</span></label
+                  >
                   <input
                     id="site-postal-code"
                     v-model="siteData.address.postalCode"
@@ -116,7 +152,11 @@
                 </div>
 
                 <div>
-                  <label for="site-city" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Ville <span class="text-red-500">*</span></label>
+                  <label
+                    for="site-city"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Ville <span class="text-red-500">*</span></label
+                  >
                   <input
                     id="site-city"
                     v-model="siteData.address.city"
@@ -129,9 +169,15 @@
               </div>
 
               <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Horaires d'ouverture</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Horaires d'ouverture</label
+                >
 
-                <div v-for="(day, index) in days" :key="index" class="grid grid-cols-5 gap-2 mb-2 items-center">
+                <div
+                  v-for="(day, index) in days"
+                  :key="index"
+                  class="grid grid-cols-5 gap-2 mb-2 items-center"
+                >
                   <div class="col-span-1">
                     <span class="text-sm">{{ day }}</span>
                   </div>
@@ -156,7 +202,9 @@
             <!-- Étape 3: Personnalisation -->
             <div v-if="currentStep === 3">
               <div class="mb-6">
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Choix du thème</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >Choix du thème</label
+                >
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   <div
                     v-for="theme in themes"
@@ -164,30 +212,56 @@
                     @click="selectTheme(theme.id)"
                     :class="[
                       'cursor-pointer border-2 rounded-lg overflow-hidden hover:shadow-md transition-shadow',
-                      siteData.theme === theme.id ? 'border-primary' : 'border-gray-200 dark:border-gray-700'
+                      siteData.theme === theme.id
+                        ? 'border-primary'
+                        : 'border-gray-200 dark:border-gray-700',
                     ]"
                   >
                     <div class="h-32 bg-gray-100 dark:bg-gray-800 relative">
-                      <img :src="theme.preview" :alt="theme.name" class="w-full h-full object-cover" />
-                      <div v-if="siteData.theme === theme.id" class="absolute top-2 right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      <img
+                        :src="theme.preview"
+                        :alt="theme.name"
+                        class="w-full h-full object-cover"
+                      />
+                      <div
+                        v-if="siteData.theme === theme.id"
+                        class="absolute top-2 right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-4 w-4 text-white"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"
+                          />
                         </svg>
                       </div>
                     </div>
                     <div class="p-3">
                       <h4 class="font-medium text-gray-900 dark:text-white">{{ theme.name }}</h4>
-                      <p class="text-xs text-gray-500 dark:text-gray-400">{{ theme.description }}</p>
+                      <p class="text-xs text-gray-500 dark:text-gray-400">
+                        {{ theme.description }}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="mb-6">
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Couleurs principales</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >Couleurs principales</label
+                >
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label for="primary-color" class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Couleur primaire</label>
+                    <label
+                      for="primary-color"
+                      class="block text-xs text-gray-500 dark:text-gray-400 mb-1"
+                      >Couleur primaire</label
+                    >
                     <div class="flex items-center">
                       <input
                         id="primary-color"
@@ -206,7 +280,11 @@
                   </div>
 
                   <div>
-                    <label for="secondary-color" class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Couleur secondaire</label>
+                    <label
+                      for="secondary-color"
+                      class="block text-xs text-gray-500 dark:text-gray-400 mb-1"
+                      >Couleur secondaire</label
+                    >
                     <div class="flex items-center">
                       <input
                         id="secondary-color"
@@ -227,25 +305,30 @@
               </div>
 
               <div>
-                <label for="site-logo" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Logo (optionnel)</label>
+                <label
+                  for="site-logo"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Logo (optionnel)</label
+                >
                 <input
                   id="site-logo"
                   ref="logoFileInput"
                   type="file"
                   accept="image/*"
                   @change="handleLogoUpload"
-                  class="block w-full text-sm text-gray-500 dark:text-gray-400
-                        file:mr-4 file:py-2 file:px-4
-                        file:rounded-md file:border-0
-                        file:text-sm file:font-medium
-                        file:bg-primary file:text-white
-                        hover:file:bg-primary/90"
+                  class="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary file:text-white hover:file:bg-primary/90"
                 />
-                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG ou GIF jusqu'à 1MB (plan gratuit)</p>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                  PNG, JPG ou GIF jusqu'à 1MB (plan gratuit)
+                </p>
 
                 <div v-if="logoPreview" class="mt-4">
                   <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Aperçu:</p>
-                  <img :src="logoPreview" alt="Logo preview" class="h-20 object-contain border border-gray-200 dark:border-gray-700 rounded-md p-2" />
+                  <img
+                    :src="logoPreview"
+                    alt="Logo preview"
+                    class="h-20 object-contain border border-gray-200 dark:border-gray-700 rounded-md p-2"
+                  />
                 </div>
               </div>
             </div>
@@ -273,21 +356,38 @@
                 </button>
 
                 <button
-  @click="handleCreateSite"
-  :disabled="!selectedTheme || isCreating"
-  :class="[
-    'px-6 py-3 rounded-md font-medium text-white',
-    (!selectedTheme || isCreating) 
-      ? 'bg-gray-400 cursor-not-allowed' 
-      : 'bg-primary hover:bg-primary/90'
-  ]"
->
-  <svg v-if="isCreating" class="animate-spin -ml-1 mr-2 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-  </svg>
-  {{ isCreating ? 'Création en cours...' : 'Créer le site' }}
-</button>
+                  @click="handleCreateSite"
+                  :disabled="!selectedTheme || isCreating"
+                  :class="[
+                    'px-6 py-3 rounded-md font-medium text-white',
+                    !selectedTheme || isCreating
+                      ? 'bg-gray-400 cursor-not-allowed'
+                      : 'bg-primary hover:bg-primary/90',
+                  ]"
+                >
+                  <svg
+                    v-if="isCreating"
+                    class="animate-spin -ml-1 mr-2 h-5 w-5 text-white inline"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  {{ isCreating ? 'Création en cours...' : 'Créer le site' }}
+                </button>
               </div>
             </div>
           </div>
@@ -302,7 +402,7 @@ import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCurrentUser } from 'vuefire'
 import { collection, addDoc } from 'firebase/firestore'
-import { db } from '@/firebase'
+import { db } from '@/services'
 import DashboardNav from '@/components/dashboard/DashboardNav.vue'
 import { convertToBase64, validateImageFile } from '@/utils/imageUtils'
 
@@ -317,22 +417,16 @@ const currentStep = ref(1)
 const totalSteps = 3
 const isSubmitting = ref(false)
 
-const stepTitles = [
-  'Informations générales',
-  'Adresse et horaires',
-  'Personnalisation'
-]
+const stepTitles = ['Informations générales', 'Adresse et horaires', 'Personnalisation']
 
 const stepDescriptions = [
   'Renseignez les informations de base de votre institut',
-  'Ajoutez votre adresse et vos horaires d\'ouverture',
-  'Personnalisez l\'apparence de votre site'
+  "Ajoutez votre adresse et vos horaires d'ouverture",
+  "Personnalisez l'apparence de votre site",
 ]
 
 // Jours de la semaine
-const days = [
-  'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'
-]
+const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
 
 // Thèmes disponibles
 const themes = [
@@ -340,20 +434,20 @@ const themes = [
     id: 'elegant',
     name: 'Élégant',
     description: 'Un design minimaliste et raffiné',
-    preview: 'https://picsum.photos/id/1056/300/200'
+    preview: 'https://picsum.photos/id/1056/300/200',
   },
   {
     id: 'modern',
     name: 'Moderne',
     description: 'Un look contemporain et dynamique',
-    preview: 'https://picsum.photos/id/1047/300/200'
+    preview: 'https://picsum.photos/id/1047/300/200',
   },
   {
     id: 'cozy',
     name: 'Chaleureux',
     description: 'Une ambiance chaleureuse et accueillante',
-    preview: 'https://picsum.photos/id/1062/300/200'
-  }
+    preview: 'https://picsum.photos/id/1062/300/200',
+  },
 ]
 
 // Données du site
@@ -366,13 +460,13 @@ const siteData = reactive({
   address: {
     street: '',
     postalCode: '',
-    city: ''
+    city: '',
   },
   hours: days.map(() => ({ open: '09:00', close: '18:00' })),
   theme: 'elegant',
   colors: {
     primary: '#5D5CDE',
-    secondary: '#FF6B9A'
+    secondary: '#FF6B9A',
   },
   logoUrl: '',
   services: [],
@@ -380,7 +474,7 @@ const siteData = reactive({
   gallery: [],
   publishStatus: 'draft',
   createdAt: null,
-  updatedAt: null
+  updatedAt: null,
 })
 
 // Navigation entre les étapes
@@ -448,7 +542,7 @@ const handleCreateSite = async () => {
       published: false,
       url: '',
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
     }
 
     // Ajouter le site à Firestore
