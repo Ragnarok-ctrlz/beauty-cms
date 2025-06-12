@@ -1,11 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const { sequelize, testConnection } = require('./config/db');
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { sequelize, testConnection } from './config/db.js';
 
-// Import des routes
-const authRoutes = require('./routes/auth');
-const siteRoutes = require('./routes/sites');
+import authRoutes from './routes/auth.js';
+import siteRoutes from './routes/sites.js';
+
+dotenv.config();
 
 const app = express();
 
@@ -20,8 +21,8 @@ app.use('/api/sites', siteRoutes);
 
 // Route de test
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    success: true, 
+  res.json({
+    success: true,
     message: 'API Beauty CMS fonctionne !',
     timestamp: new Date().toISOString()
   });
@@ -31,7 +32,7 @@ app.get('/api/health', (req, res) => {
 async function initDatabase() {
   try {
     await testConnection();
-    await sequelize.sync({ alter: true }); // Utiliser { force: true } pour recréer les tables
+    await sequelize.sync({ alter: true });
     console.log('✅ Base de données synchronisée');
   } catch (error) {
     console.error('❌ Erreur synchronisation base de données:', error);
@@ -45,4 +46,6 @@ app.listen(PORT, async () => {
   await initDatabase();
 });
 
-module.exports = app;
+export default app;
+export { app }; // Export de l'application pour les tests
+

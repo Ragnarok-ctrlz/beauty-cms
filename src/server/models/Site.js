@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/db.js';
 
 const Site = sequelize.define('Site', {
   id: {
@@ -33,7 +33,7 @@ const Site = sequelize.define('Site', {
     allowNull: true
   },
   address: {
-    type: DataTypes.JSON, // Stockage JSON pour l'adresse complète
+    type: DataTypes.JSON,
     allowNull: true
   },
   logoUrl: {
@@ -45,7 +45,7 @@ const Site = sequelize.define('Site', {
     defaultValue: 'elegant'
   },
   colors: {
-    type: DataTypes.JSON, // Stockage JSON pour les couleurs
+    type: DataTypes.JSON,
     allowNull: true
   },
   published: {
@@ -61,19 +61,19 @@ const Site = sequelize.define('Site', {
     }
   },
   services: {
-    type: DataTypes.JSON, // Temporaire, à remplacer par une table services
+    type: DataTypes.JSON,
     allowNull: true
   },
   team: {
-    type: DataTypes.JSON, // Temporaire, à remplacer par une table team
+    type: DataTypes.JSON,
     allowNull: true
   },
   gallery: {
-    type: DataTypes.JSON, // Temporaire, à remplacer par une table gallery
+    type: DataTypes.JSON,
     allowNull: true
   },
   hours: {
-    type: DataTypes.JSON, // Horaires d'ouverture
+    type: DataTypes.JSON,
     allowNull: true
   }
 }, {
@@ -81,4 +81,4 @@ const Site = sequelize.define('Site', {
   tableName: 'sites'
 });
 
-module.exports = Site;
+export default Site;

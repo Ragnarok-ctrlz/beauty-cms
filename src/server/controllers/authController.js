@@ -1,6 +1,9 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const { User } = require('../models');
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import { User } from '../models/index.js'; // Ajoute .js obligatoirement
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const authController = {
   // Inscription
@@ -8,7 +11,6 @@ const authController = {
     try {
       const { email, password, displayName } = req.body;
 
-      // Vérifier si l'utilisateur existe
       const existingUser = await User.findOne({ where: { email } });
       if (existingUser) {
         return res.status(400).json({
@@ -17,11 +19,9 @@ const authController = {
         });
       }
 
-      // Hasher le mot de passe
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
 
-      // Créer l'utilisateur
       const user = await User.create({
         uid: `user_${Date.now()}`,
         email,
@@ -29,7 +29,6 @@ const authController = {
         displayName
       });
 
-      // Générer le token JWT
       const token = jwt.sign(
         { userId: user.id, email: user.email },
         process.env.JWT_SECRET || 'your-secret-key',
@@ -61,7 +60,6 @@ const authController = {
     try {
       const { email, password } = req.body;
 
-      // Trouver l'utilisateur
       const user = await User.findOne({ where: { email } });
       if (!user) {
         return res.status(400).json({
@@ -70,7 +68,6 @@ const authController = {
         });
       }
 
-      // Vérifier le mot de passe
       const isValidPassword = await bcrypt.compare(password, user.password);
       if (!isValidPassword) {
         return res.status(400).json({
@@ -79,7 +76,6 @@ const authController = {
         });
       }
 
-      // Générer le token JWT
       const token = jwt.sign(
         { userId: user.id, email: user.email },
         process.env.JWT_SECRET || 'your-secret-key',
@@ -107,4 +103,4 @@ const authController = {
   }
 };
 
-module.exports = authController;
+export default authController;

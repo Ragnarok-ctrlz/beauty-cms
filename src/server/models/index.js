@@ -1,11 +1,11 @@
-const User = require('./User');
-const Site = require('./Site');
+import User from './User.js';
+import Site from './Site.js';
 
 // Définir les relations
 User.hasMany(Site, { foreignKey: 'ownerId', as: 'sites' });
 Site.belongsTo(User, { foreignKey: 'ownerId', as: 'owner' });
 
-module.exports = {
+export {
   User,
   Site
 };

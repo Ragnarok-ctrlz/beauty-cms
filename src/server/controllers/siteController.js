@@ -1,4 +1,4 @@
-const { Site, User } = require('../models');
+import { Site, User } from '../models/index.js';
 
 const siteController = {
   // Créer un site
@@ -54,9 +54,9 @@ const siteController = {
     try {
       const { id } = req.params;
       const site = await Site.findOne({
-        where: { 
-          id, 
-          ownerId: req.user.id 
+        where: {
+          id,
+          ownerId: req.user.id
         },
         include: [{
           model: User,
@@ -90,9 +90,9 @@ const siteController = {
     try {
       const { id } = req.params;
       const [updatedRowsCount] = await Site.update(req.body, {
-        where: { 
-          id, 
-          ownerId: req.user.id 
+        where: {
+          id,
+          ownerId: req.user.id
         }
       });
 
@@ -120,4 +120,4 @@ const siteController = {
   }
 };
 
-module.exports = siteController;
+export default siteController;
