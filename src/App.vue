@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-500 transition-colors duration-200">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
     <router-view />
   </div>
 </template>
@@ -10,10 +10,10 @@ import { onMounted } from 'vue'
 // Mode sombre
 onMounted(() => {
   // Détection initiale du mode sombre
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark').matches) {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark')
   }
-
+  
   // Écoute des changements de préférence
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     if (event.matches) {

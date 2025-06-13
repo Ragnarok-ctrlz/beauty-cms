@@ -12,32 +12,32 @@
           </router-link>
         </p>
       </div>
-
+      
       <form class="mt-8 space-y-6" @submit.prevent="handleRegister">
         <div v-if="errorMessage" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
           <span class="block sm:inline">{{ errorMessage }}</span>
         </div>
-
+        
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
             <label for="name" class="sr-only">Nom complet</label>
-            <input id="name" name="name" type="text" autocomplete="name" required
+            <input id="name" name="name" type="text" autocomplete="name" required 
                    v-model="name"
-                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 rounded-t-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-base"
+                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 rounded-t-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-base" 
                    placeholder="Nom complet">
           </div>
           <div>
             <label for="email-address" class="sr-only">Adresse email</label>
-            <input id="email-address" name="email" type="email" autocomplete="email" required
+            <input id="email-address" name="email" type="email" autocomplete="email" required 
                    v-model="email"
-                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-base"
+                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-base" 
                    placeholder="Adresse email">
           </div>
           <div>
             <label for="password" class="sr-only">Mot de passe</label>
-            <input id="password" name="password" type="password" autocomplete="new-password" required
+            <input id="password" name="password" type="password" autocomplete="new-password" required 
                    v-model="password"
-                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 rounded-b-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-base"
+                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 rounded-b-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-base" 
                    placeholder="Mot de passe (minimum 6 caractères)">
           </div>
         </div>
@@ -62,8 +62,9 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-
-
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { doc, setDoc } from 'firebase/firestore'
+import { auth, db } from '@/firebase'
 
 const router = useRouter()
 
@@ -77,22 +78,22 @@ const handleRegister = async () => {
   try {
     loading.value = true
     errorMessage.value = ''
-
+    
     // Vérifier la longueur du mot de passe
     if (password.value.length < 6) {
       errorMessage.value = 'Le mot de passe doit contenir au moins 6 caractères.'
       return
     }
-
+    
     // Création du compte avec Firebase
     const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value)
     const user = userCredential.user
-
+    
     // Mise à jour du profil avec le nom
     await updateProfile(user, {
       displayName: name.value
     })
-
+    
     // Création d'un document utilisateur dans Firestore
     await setDoc(doc(db, 'users', user.uid), {
       name: name.value,
@@ -101,12 +102,12 @@ const handleRegister = async () => {
       role: 'owner', // Propriétaire d'institut par défaut
       sites: [] // Liste de sites vide au départ
     })
-
+    
     // Redirection vers le tableau de bord
     router.push('/dashboard')
   } catch (error) {
     console.error('Erreur d\'inscription:', error)
-
+    
     // Messages d'erreur adaptés
     switch (error.code) {
       case 'auth/email-already-in-use':

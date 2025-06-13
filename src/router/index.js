@@ -1,3 +1,4 @@
+// src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
 import { getCurrentUser } from 'vuefire'
 import HomeView from '../views/HomeView.vue'
@@ -37,22 +38,15 @@ const router = createRouter({
       name: 'edit-site',
       component: () => import('../views/EditSiteView.vue'),
       meta: { requiresAuth: true }
-  },
-  // Ajouter cette route dans votre fichier router
-  {
-    path: '/sites/:id/preview',
-    name: 'SitePreview',
-    component: () => import('@/views/SitePreview.vue'),
-    meta: { requiresAuth: true }
-  }
-]
+    }
+  ]
 })
 
 // Navigation guard pour vérifier l'authentification
 router.beforeEach(async (to) => {
   if (to.meta.requiresAuth) {
     const currentUser = await getCurrentUser()
-
+    
     if (!currentUser) {
       return {
         path: '/login',
